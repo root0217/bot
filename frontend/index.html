@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookQuest</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <h1>Добро пожаловать в BookQuest!</h1>
+  <button id="get-data">Получить данные</button>
+
+  <script>
+    // Telegram SDK
+    const tg = window.Telegram.WebApp;
+
+    // Растянуть приложение на весь экран
+    tg.expand();
+
+    // Кнопка Telegram
+    tg.MainButton.text = "Готово";
+    tg.MainButton.show();
+
+    // Обработчик нажатия кнопки
+    document.getElementById("get-data").addEventListener("click", () => {
+      const user = tg.initDataUnsafe.user;
+      alert(`Привет, ${user.first_name}!`);
+    });
+  </script>
+</body>
+</html>

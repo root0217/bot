@@ -1,7 +1,27 @@
 {
+  "name": "bookquest_webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/root0217/BookQuest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/root0217/BookQuest/issues"
+  },
+  "homepage": "https://github.com/root0217/BookQuest#readme",
+  "description": "",
   "dependencies": {
-    "axios": "^1.7.9",
-    "body-parser": "^1.20.3",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
