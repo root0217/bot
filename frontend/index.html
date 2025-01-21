@@ -8,6 +8,8 @@
 </head>
 <body>
   <h1>Добро пожаловать в BookQuest!</h1>
+
+  <!-- Кнопка для получения данных пользователя -->
   <button id="get-data">Получить данные</button>
 
   <script>
@@ -17,30 +19,27 @@
     // Растянуть приложение на весь экран
     tg.expand();
 
-    // Кнопка Telegram
+    // Настроить главную кнопку Telegram
     tg.MainButton.text = "Готово";
     tg.MainButton.show();
 
-    // Обработчик нажатия кнопки
+    // Обработчик нажатия кнопки "Получить данные"
     document.getElementById("get-data").addEventListener("click", () => {
       const user = tg.initDataUnsafe.user;
-      alert(`Привет, ${user.first_name}!`);
+      if (user) {
+        alert(`Привет, ${user.first_name}!`);
+      } else {
+        alert("Не удалось получить данные пользователя.");
+      }
     });
   </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Book Quest</title>
-</head>
-<body>
-    <h1>Welcome to My Book Quest</h1>
 
-    <!-- Виджет Telegram Login -->
-    <script async src="https://telegram.org/js/telegram-widget.js?7"
-        data-telegram-login="MyBookQuest" data-size="large" data-radius="10" data-auth-url="https://bot-o4sx.onrender.com/auth"></script>
+  <!-- Виджет Telegram Login -->
+  <script async src="https://telegram.org/js/telegram-widget.js?7"
+      data-telegram-login="MyBookQuest_Bot" 
+      data-size="large" 
+      data-radius="10" 
+      data-auth-url="https://bot-o4sx.onrender.com/auth">
+  </script>
 </body>
 </html>
