@@ -1,19 +1,18 @@
 const { Telegraf } = require("telegraf");
 const express = require("express");
 
-const BOT_TOKEN = "8078512100:AAEfHFr-gSeE2AsTS7TB_puNoVNELkSnnXs";
-const WEBHOOK_URL = "https://bot-o4sx.onrender.com";
+const BOT_TOKEN = "8078512100:AAEfHFr-gSeE2AsTS7TB_puNoVNELkSnnXs"; // Ваш токен
+const WEBHOOK_URL = "https://bot-o4sx.onrender.com"; // Ваш URL Render
+
 const bot = new Telegraf(BOT_TOKEN);
 const app = express();
-
-app.use(express.json()); // Для обработки JSON-тела запросов
 
 // Команда /start
 bot.command("start", (ctx) => {
   ctx.reply("Добро пожаловать в BookQuest! Нажмите на кнопку ниже, чтобы открыть приложение.", {
     reply_markup: {
       inline_keyboard: [
-        [{ text: "Открыть приложение", web_app: { url: "https://bot-o4sx.onrender.com" } }],
+        [{ text: "Открыть приложение", web_app: { url: WEBHOOK_URL } }],
       ],
     },
   });
@@ -21,6 +20,8 @@ bot.command("start", (ctx) => {
 
 // Устанавливаем webhook
 bot.telegram.setWebhook(`${WEBHOOK_URL}/webhook/${BOT_TOKEN}`);
+
+// Обработка запросов от Telegram через webhook
 app.use(bot.webhookCallback(`/webhook/${BOT_TOKEN}`));
 
 // Проверка работы сервера
