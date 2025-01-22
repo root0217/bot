@@ -18,6 +18,9 @@
   "homepage": "https://github.com/root0217/BookQuest#readme",
   "description": "",
   "dependencies": {
+    "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "crypto": "^1.0.1",
     "express": "^4.21.2",
     "telegraf": "^4.16.3"
   },

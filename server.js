@@ -74,7 +74,7 @@ app.listen(PORT, async () => {
 
     // Устанавливаем Webhook для Telegram
     try {
-        const webhookUrl = `https://bot-o4sx.onrender.com/webhook/${TELEGRAM_BOT_TOKEN}`;
+        const webhookUrl = `https://bot-o4sx.onrender.com/webhook/8078512100:AAEfHFr-gSeE2AsTS7TB_puNoVNELkSnnXs`;
         const response = await axios.post(`${TELEGRAM_API_URL}/setWebhook`, {
             url: webhookUrl,
         });
